@@ -14,7 +14,7 @@ panic. Tackle just about any API challenge with more than a dozen
 open-source utilities and common programming patterns you can apply
 right away.
 </p>},
-                image_url: 'tree-of-life.jpg',
+                image_url: 'lorem.jpg',
                 price: 24.95)
 
 Product.create!(title: 'Build Great Web APIs 2',
@@ -23,6 +23,6 @@ Product.create!(title: 'Build Great Web APIs 2',
 <em>Robust, Reliable, and Resilient</em>
 Almost the same
 </p>},
-                image_url: 'tree-of-life.jpg',
+                image_url: 'tailwind.jpg',
                 price: 23.00)
 
