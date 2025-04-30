@@ -26,5 +26,3 @@ Almost the same
                 image_url: 'tree-of-life.jpg',
                 price: 23.00)
 
-User.create! name: 'dave',
-             password: Rails.application.credentials.dave_password
