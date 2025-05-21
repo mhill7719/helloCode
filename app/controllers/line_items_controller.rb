@@ -2,7 +2,8 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: %i[ create ]
   before_action :set_line_item, only: %i[ show edit update destroy ]
-
+  skip_before_action :authorize, only: %i[ create ]
+  
   # GET /line_items or /line_items.json
   def index
     @line_items = LineItem.all
@@ -42,7 +43,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: "Line item was successfully updated." }
+        format.html { redirect_to line_item_url(@line_item), notice: "Line item was successfully updated." }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +57,7 @@ class LineItemsController < ApplicationController
     @line_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to line_items_path, status: :see_other, notice: "Line item was successfully destroyed." }
+      format.html { redirect_to line_items_url, notice: "Line item was successfully destroyed." }
       format.json { head :no_content }
     end
   end
